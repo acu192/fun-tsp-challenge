@@ -16,6 +16,10 @@ The path the salesperson will take is a cycle, so when posed as an optimization 
 
 ![TSP Example with Solution (ref: https://commons.wikimedia.org/wiki/File:GLPK_solution_of_a_travelling_salesman_problem.svg)](images/tsp_example.png)
 
+More reading (optional):
+- [Wikipedia: Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
+- [Wikipedia: NP-completeness](https://en.wikipedia.org/wiki/NP-completeness)
+
 ### The Challenge
 
 TSP is a tough problem. In fact, _tough_ doesn't adequately describe it. It's **so tough** that _literally_ no one yet knows if there's a "fast" algorithm which gives an optimal solution. (We define "fast" to mean that the algorithm runs in polynomial time.)
@@ -55,27 +59,33 @@ I've provided four toy datasets for you to play with.
 
 [data/tiny.csv](data/tiny.csv)
 
-This dataset contains only 10 cities, so you can use the exact, optimal, brute-force algorithm for this one. (But first you'll have to write that algorithm!)
+This dataset contains only 10 cities.
+
+Hint: This dataset is small enough that you can write a [brute-force algorithm](https://en.wikipedia.org/wiki/Brute-force_search) to find the optimal solution.
 
 #### Small Dataset
 
 [data/small.csv](data/small.csv)
 
-This dataset contains 30 cities, clustered into 3 regions. (You'll have to find the regions yourself, either by visualizing the data or via a clustering algorithm like k-means.)
+This dataset contains 30 cities, clustered into 3 regions.
 
-Hint: Can you find local optimal solutions within each region then combine those local solutions intelligently?
+Hint: Find local optimal solutions within each region, then combine those local solutions intelligently. (Of course first you have to find the regions, either by visualizing the data and/or via a clustering algorithm like [k-means](https://en.wikipedia.org/wiki/K-means_clustering).)
 
 #### Medium Dataset
 
 [data/medium.csv](data/medium.csv)
 
-This dataset contains 100 cities, clustered into 10 regions.
+This dataset contains 100 cities.
+
+Hint: Start with a [greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm), then have your program iteratively (and randomly) improve upon the solution found by the greedy algorithm.
 
 #### Large Dataset
 
 [data/large.csv](data/large.csv)
 
-This dataset contains 1,000 cities, clustered into 50 regions.
+This dataset contains 1,000 cities.
+
+Hint: Best of luck. :)
 
 ### Starter Code
 
@@ -84,10 +94,3 @@ I've provided you with some starter code that will help you read the data and sc
 ### Enjoy the Craft
 
 It's time for you to get to programming. This is your chance to chill out and enjoy the craft. [Build your castles.](https://gist.github.com/acu192/44582a272508c69541867f371490df25)
-
-### More Reading
-
-- [Wikipedia: Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
-- [Wikipedia: NP-completeness](https://en.wikipedia.org/wiki/NP-completeness)
-- [Wikipedia: Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)
-- [Wikipedia: k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering)
