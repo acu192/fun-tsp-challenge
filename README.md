@@ -51,7 +51,7 @@ Now it's your turn! Let's write some approximate TSP solvers.
 
 ### Toy Datasets
 
-We'll assume the salesperson lives in a boring, flat, 2d Cartesian plane, and that each city can be described simply as existing at a single (x, y) location. Each datafile describes some number of cities, one city per line in the file, where each city has a name and a location.
+We'll assume the salesperson lives in a boring, flat, 2D Cartesian plane, and that each city can be described simply as existing at a single (x, y) location. Each datafile describes some number of cities, one city per line in the file, where each city has a index (first city is index-0) and a location.
 
 I've provided four toy datasets for you to play with.
 
