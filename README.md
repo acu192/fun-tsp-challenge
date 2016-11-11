@@ -49,7 +49,7 @@ Now it's your turn! Let's write some approximate TSP solvers.
 
 We'll assume the salesperson lives in a boring, flat, 2d Cartesian plane, and that each city can be described simply as existing at a single (x, y) location. Each datafile describes some number of cities, one city per line in the file, where each city has a name and a location.
 
-I've provided three toy datasets for you to play with.
+I've provided four toy datasets for you to play with.
 
 #### Tiny Dataset
 
@@ -57,17 +57,29 @@ I've provided three toy datasets for you to play with.
 
 This dataset contains only 10 cities, so you can use the exact, optimal, brute-force algorithm for this one. (But first you'll have to write that algorithm!)
 
+#### Small Dataset
+
+[data/small.csv](data/small.csv)
+
+This dataset contains 30 cities, clustered into 3 regions. (You'll have to find the regions yourself, either by visualizing the data or via a clustering algorithm like k-means.)
+
+Hint: Can you find local optimal solutions within each region then combine those local solutions intelligently?
+
 #### Medium Dataset
 
 [data/medium.csv](data/medium.csv)
 
-This dataset contains 30 cities, clustered into 3 regions. (Crazy how we call a dataset of size 30 _medium_!)
+This dataset contains 1,000 cities, clustered into 10 regions.
 
 #### Large Dataset
 
 [data/large.csv](data/large.csv)
 
 This dataset contains 100,000 cities, clustered into 50 regions.
+
+### Starter Code
+
+I've provided you with some starter code that will help you read the data and score your TSP solutions. Have look at [tsp_starter.py](tsp_starter.py).
 
 ### Enjoy the Craft
 
@@ -77,3 +89,5 @@ It's time for you to get to programming. This is your chance to chill out and en
 
 - [Wikipedia: Traveling Salesman Problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem)
 - [Wikipedia: NP-completeness](https://en.wikipedia.org/wiki/NP-completeness)
+- [Wikipedia: Greedy Algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm)
+- [Wikipedia: k-means clustering](https://en.wikipedia.org/wiki/K-means_clustering)
