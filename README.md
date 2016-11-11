@@ -69,13 +69,13 @@ Hint: Can you find local optimal solutions within each region then combine those
 
 [data/medium.csv](data/medium.csv)
 
-This dataset contains 1,000 cities, clustered into 10 regions.
+This dataset contains 100 cities, clustered into 10 regions.
 
 #### Large Dataset
 
 [data/large.csv](data/large.csv)
 
-This dataset contains 100,000 cities, clustered into 50 regions.
+This dataset contains 1,000 cities, clustered into 50 regions.
 
 ### Starter Code
 
