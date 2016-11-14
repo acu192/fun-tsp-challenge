@@ -43,7 +43,15 @@ def score_solution(cities, solution):
     return dist
 
 
-def visualize_solution(cities, solution, show=True):
+def create_figure():
+    '''
+    Creates a figure which `visualize_solution()` will draw onto.
+    '''
+    fig, axes = plt.subplots(1, 2, figsize=(15, 7))
+    return fig, axes
+
+
+def visualize_solution(cities, solution, fig=None, axes=None, block=True):
     '''
     Visualize the solution in a 2D plot.
     The 'cities' and 'solution' arguments are the same
@@ -51,17 +59,25 @@ def visualize_solution(cities, solution, show=True):
     '''
     dist = score_solution(cities, solution)
 
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(15, 7))
+    if fig is None or axes is None:
+        fig, axes = create_figure()
+    ax1, ax2 = axes
     fig.suptitle('Total Distance: {}'.format(dist), fontsize=20)
 
+    ax1.clear()
     ax1.scatter(cities[:,0], cities[:,1])
 
     path = np.hstack((solution, solution[0]))  # <-- the salesperson has to return home!
+    ax2.clear()
     ax2.plot(cities[path,0], cities[path,1])
     ax2.scatter(cities[:,0], cities[:,1])
 
-    if show:
+    if block:
+        plt.ioff()
         plt.show()
+    else:
+        plt.ion()
+        plt.pause(0.05)
 
 
 def tsp_solver_silly(cities):
