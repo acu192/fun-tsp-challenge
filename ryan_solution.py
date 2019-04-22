@@ -54,7 +54,7 @@ def greedy_tsp_solver(cities, new_piece_callback, start_index=0):
 if __name__ == '__main__':
 
     if len(sys.argv) != 3:
-        print 'Usage: ipython {} <data_file_path> <bf|greedy>'.format(sys.argv[0])
+        print('Usage: ipython {} <data_file_path> <bf|greedy>'.format(sys.argv[0]))
         sys.exit(1)
 
     data_file_path = sys.argv[1]
@@ -68,8 +68,8 @@ if __name__ == '__main__':
 
         # Closure over cities, fig, and axes:
         def visualize_wrapper(solution, is_final=False):
-            print ('FINAL SOLUTION:' if is_final else 'Best so far:'), \
-                    score_solution(cities, solution), solution
+            print(('FINAL SOLUTION:' if is_final else 'Best so far:'), \
+                    score_solution(cities, solution), solution)
             visualize_solution(cities, solution, fig, axes, block=is_final)
 
         solution = brute_force_tsp_solver(cities, visualize_wrapper)
@@ -79,7 +79,7 @@ if __name__ == '__main__':
 
         # Closure over cities, fig, and axes:
         def visualize_wrapper(solution, is_final=False):
-            print ('FINAL SOLUTION:' if is_final else 'Best so far:'), solution
+            print(('FINAL SOLUTION:' if is_final else 'Best so far:'), solution)
             visualize_solution(cities, solution, fig, axes, block=is_final)
 
         best_score = float('inf')
@@ -88,12 +88,12 @@ if __name__ == '__main__':
             solution = greedy_tsp_solver(cities, visualize_wrapper, start_index)
             visualize_wrapper(solution, False)
             score = score_solution(cities, solution)
-            print 'Score:', score
+            print('Score:', score)
             if score < best_score:
                 best_score = score
                 best_solution = solution
         visualize_wrapper(best_solution, True)
 
     else:
-        print 'Unknown algorithm'
+        print('Unknown algorithm')
 

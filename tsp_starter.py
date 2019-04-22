@@ -35,12 +35,12 @@ def score_solution(cities, solution):
         raise Exception(('Invalid solution: len(solution) is {}, ' + \
                 'but it should be {}.').format(len(solution), len(cities)))
 
-    if set(solution) != set(xrange(len(cities))):
+    if set(solution) != set(range(len(cities))):
         raise Exception('Invalid solution: The solution does not ' + \
                 'visit each city exactly once!')
 
     dist = 0.0
-    for i in xrange(len(solution)):
+    for i in range(len(solution)):
         p_prev = cities[solution[i-1]]
         p_here = cities[solution[i]]
         dist += euclidean(p_prev, p_here)
@@ -94,7 +94,7 @@ def tsp_solver_silly(cities, new_best_solution_func = None):
     '''
     best_dist = float("inf")
     best_solution = None
-    for i in xrange(1000):
+    for i in range(1000):
         solution = np.arange(len(cities))
         np.random.shuffle(solution)
         dist = score_solution(cities, solution)
